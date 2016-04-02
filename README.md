@@ -112,7 +112,7 @@ Conclusion
 JSON-LD sucks for APIs - period.   Its out of the box performance is abhorrent.  
 
 Some of the major performance suckage can be explained away if we could magically 
-improve hosting plans, and make the most magical of JSON-LD implementation - but 
+improve hosting plans, and make the most magical of possible JSON-LD implementations - but 
 even with this there is over an order of magintude of performance cost to parse 
 JSON-LD than to parse JSON because of the requirment to transform an infinite number 
 of equivalent forms into a single cannonical form.
