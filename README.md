@@ -28,7 +28,7 @@ Methodology of the code - it is qute simple:
     }
 
 To run the JSON-only version simply comment out the `jsonld_compact` call.
-We reuse the $y variable to make sure we donn't doble store any memory 
+We reuse the $y variable to make sure we don't double store any memory 
 and accumulate the 1000 parsed results in an array to get a sense of whether
 or not there is a different memory size for JSON or JSON-LD.
 
@@ -75,7 +75,10 @@ Output of the test runs
 Interpreting the results
 ------------------------
 
-* Memory usage is equivalent - actually slightly lower for the JSON-LD
+* Memory usage is equivalent - actually slightly lower for the JSON-LD - 
+that is kind of impressive and probably leads to a small net benefit for 
+ling-lived document-style data.   Supporting multiple equivalent 
+serialized forms may save space at the cost of processing.
 
 * Real time for the JSON-LD is nearly 2000X more costly than JSON - well beyond
 three orders of magnitude
@@ -114,7 +117,7 @@ even with this there is over an order of magintude of performance cost to parse
 JSON-LD than to parse JSON because of the requirment to transform an infinite number 
 of equivalent forms into a single cannonical form.
 
-Ultimately it means if a laegr scale operator started using JSON-LD bases APIs heavily 
+Ultimately it means if a large scale operator started using JSON-LD bases APIs heavily 
 to enable a distributed LMS - so we get to the point where the core servers are spending
 more time servicing standards-based API calls rather than generating UI markup - it will
 require somewhere between 10 and 100 times more compute power to support JSON-LD than simply
