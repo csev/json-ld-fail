@@ -1,6 +1,6 @@
 
-JSON-LD Sucks for API Specs
----------------------------
+JSON-LD Performance Sucks for API Specs
+---------------------------------------
 
 This is a very simple test simulating parsing of a JSON-only document versus a JSON-LD
 document.  The code is super-simple.  Since JSON-LD requires the document be first parsed
