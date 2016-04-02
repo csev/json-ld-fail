@@ -30,7 +30,7 @@ Methodology of the code - it is qute simple:
 To run the JSON-only version simply comment out the `jsonld_compact` call.
 We reuse the $y variable to make sure we don't double store any memory 
 and accumulate the 1000 parsed results in an array to get a sense of whether
-or not there is a different memory size for JSON or JSON-LD.
+or not there is a different memory usage for JSON or JSON-LD.
 
 I used `/usr/bin/time` on my MacBook Pro 15 as the test.
 
