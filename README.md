@@ -1,5 +1,5 @@
 
-JSON-LD Performance Sucks for API Specs
+JSON-LD Sucks for API Specs - Continued
 ---------------------------------------
 
 This is a very simple test simulating parsing of a JSON-only document versus a JSON-LD
@@ -28,9 +28,9 @@ Methodology of the code - it is qute simple:
     }
 
 To run the JSON-only version simply comment out the `jsonld_compact` call.
-We reuse the $y variable to make sure we don't double store any memory 
+We reuse the $y variable to make sure we donn't doble store any memory 
 and accumulate the 1000 parsed results in an array to get a sense of whether
-or not there is a different memory usage for JSON or JSON-LD.
+or not there is a different memory size for JSON or JSON-LD.
 
 I used `/usr/bin/time` on my MacBook Pro 15 as the test.
 
@@ -75,10 +75,7 @@ Output of the test runs
 Interpreting the results
 ------------------------
 
-* Memory usage is equivalent - actually slightly lower for the JSON-LD - 
-that is kind of impressive and probably leads to a small net benefit for 
-ling-lived document-style data.   Supporting multiple equivalent 
-serialized forms may save space at the cost of processing.
+* Memory usage is equivalent - actually slightly lower for the JSON-LD
 
 * Real time for the JSON-LD is nearly 2000X more costly than JSON - well beyond
 three orders of magnitude
@@ -112,12 +109,12 @@ Conclusion
 JSON-LD sucks for APIs - period.   Its out of the box performance is abhorrent.  
 
 Some of the major performance suckage can be explained away if we could magically 
-improve hosting plans, and make the most magical of possible JSON-LD implementations - but 
+improve hosting plans, and make the most magical of JSON-LD implementation - but 
 even with this there is over an order of magintude of performance cost to parse 
 JSON-LD than to parse JSON because of the requirment to transform an infinite number 
 of equivalent forms into a single cannonical form.
 
-Ultimately it means if a large scale operator started using JSON-LD bases APIs heavily 
+Ultimately it means if a laegr scale operator started using JSON-LD bases APIs heavily 
 to enable a distributed LMS - so we get to the point where the core servers are spending
 more time servicing standards-based API calls rather than generating UI markup - it will
 require somewhere between 10 and 100 times more compute power to support JSON-LD than simply
